@@ -1,0 +1,11 @@
+== 1. Datafiles de negocio fuera de /opt/oracle/oradata/FREE/FREEPDB1 ==
+Nada que reubicar: ya están todos en /opt/oracle/oradata/FREE/FREEPDB1
+== 3. Resultado ==
+
+TABLESPACE_NAM FILE_NAME					  STATUS    AUT 	MB     MAX_MB
+-------------- -------------------------------------------------- --------- --- ---------- ----------
+TBS_ACADEMIA   /opt/oracle/oradata/FREE/FREEPDB1/academia01.dbf   AVAILABLE YES        100	 1024
+TBS_CLINICA    /opt/oracle/oradata/FREE/FREEPDB1/clinica01.dbf	  AVAILABLE YES        100	 1024
+TBS_FINTECH    /opt/oracle/oradata/FREE/FREEPDB1/fintech01.dbf	  AVAILABLE YES        100	 1024
+TBS_LOGISTICA  /opt/oracle/oradata/FREE/FREEPDB1/logistica01.dbf  AVAILABLE YES        100	 1024
+TBS_RETAIL     /opt/oracle/oradata/FREE/FREEPDB1/retail01.dbf	  AVAILABLE YES        100	 1024
