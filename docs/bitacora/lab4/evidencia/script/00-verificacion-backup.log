@@ -1,0 +1,19 @@
+== Manifiesto ==
+etiqueta=lab3-final
+fecha_utc=20261024T122311Z
+contenedor=oralab-26ai
+volumen=oralab-26ai-data
+imagen=container-registry.oracle.com/database/free:latest
+git_commit=1da1a0d
+tipo=copia en frio consistente (SHUTDOWN IMMEDIATE)
+archivos_fuera_del_volumen=0
+
+== Verificacion SHA-256 ==
+./extras.lst: OK
+./inventario.txt: OK
+./manifiesto.txt: OK
+./volumen.tar.gz: OK
+
+== Estado del contenedor ==
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED       STATUS                   PORTS                                                                                      NAMES
+66944fea9658   container-registry.oracle.com/database/free:latest   "/bin/bash -c $SCRIP…"   3 weeks ago   Up 2 minutes (healthy)   0.0.0.0:1521->1521/tcp, [::]:1521->1521/tcp, 0.0.0.0:8181->8181/tcp, [::]:8181->8181/tcp   oralab-26ai

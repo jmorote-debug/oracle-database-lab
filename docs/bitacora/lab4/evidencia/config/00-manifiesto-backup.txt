@@ -1,0 +1,8 @@
+etiqueta=lab3-final
+fecha_utc=20261024T122311Z
+contenedor=oralab-26ai
+volumen=oralab-26ai-data
+imagen=container-registry.oracle.com/database/free:latest
+git_commit=1da1a0d
+tipo=copia en frio consistente (SHUTDOWN IMMEDIATE)
+archivos_fuera_del_volumen=0
