@@ -1,0 +1,7 @@
+
+Grant succeeded.
+
+
+GRANTEE      TABLE_NAME 	  PRIVILEGE  COM
+------------ -------------------- ---------- ---
+C##OPS_RO    V_$DIAG_ALERT_EXT	  SELECT     YES
