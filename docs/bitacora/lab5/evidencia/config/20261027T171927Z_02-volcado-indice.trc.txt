@@ -11,8 +11,8 @@ Machine:	x86_64
 CLID:	P
 Instance name: FREE
 Instance number: 1
-Database name: FREE 
-Database unique name: FREE 
+Database name: FREE
+Database unique name: FREE
 Database id: 1509902213
 Database role: PRIMARY
 Redo thread mounted by this instance: 1
@@ -34,7 +34,7 @@ Unix process pid:       826
 *** CONTAINER ID:(3) 2026-10-27T17:19:27.639306+00:00
 *** CLIENT IP:(N/A) 2026-10-27T17:19:27.639311+00:00
 *** CONNECTION ID:(XtamC+EwAzTgYwIAEazqcg==) 2026-10-27T17:19:27.639328+00:00
- 
+
 ----- begin tree dump
 branch: 0x313 787 (0: nrow: 187, level: 1)
    leaf: 0x314 788 (-1: row:578.578 avs:8)
@@ -243,13 +243,13 @@ BH (0xc1f7e9c0) file#: 25 rdba: 0x00000313 (1024/787) class: 1 ba: 0xc1454000
   flags: buffer_dirty
   LRBA: [0x8.22fb.0] LSCN: [0x534306] HSCN: [0x534471] HSUB: [1]
   Printing buffer operation history (latest change first): (cnt 6)
-  01. sid:15 L464:chg1_mn:bic:FMS     02. sid:15 L778:chg1_mn:bis:FMS   
-  03. sid:15 L005:esc:acq:pin         04. sid:15 L323:esc:set:MEXCL     
-  05. sid:15 L464:chg1_mn:bic:FMS     06. sid:15 L778:chg1_mn:bis:FMS   
-  07. sid:15 L552:chg_main:bic:CLN    08. sid:15 L353:gcur:set:MEXCL    
-  09. sid:15 L464:chg1_mn:bic:FMS     10. sid:15 L778:chg1_mn:bis:FMS   
-  11. sid:15 L005:esc:acq:pin         12. sid:15 L323:esc:set:MEXCL     
-  13. sid:15 L464:chg1_mn:bic:FMS     14. sid:15 L778:chg1_mn:bis:FMS   
+  01. sid:15 L464:chg1_mn:bic:FMS     02. sid:15 L778:chg1_mn:bis:FMS
+  03. sid:15 L005:esc:acq:pin         04. sid:15 L323:esc:set:MEXCL
+  05. sid:15 L464:chg1_mn:bic:FMS     06. sid:15 L778:chg1_mn:bis:FMS
+  07. sid:15 L552:chg_main:bic:CLN    08. sid:15 L353:gcur:set:MEXCL
+  09. sid:15 L464:chg1_mn:bic:FMS     10. sid:15 L778:chg1_mn:bis:FMS
+  11. sid:15 L005:esc:acq:pin         12. sid:15 L323:esc:set:MEXCL
+  13. sid:15 L464:chg1_mn:bic:FMS     14. sid:15 L778:chg1_mn:bis:FMS
 
   buffer tsn: 13 rdba: 0x00000313 (1024/787)
   scn: 0x534471 seq: 0x02 flg: 0x00 tail: 0x44710602
@@ -776,7 +776,7 @@ Block header dump:  0x00000313
  seg/obj: 0x12020  csc:  0x0000000000534471  itc: 1  flg: E-  typ: 2 - INDEX
      brn: 0  bdba: 0x310 ver: 0x01 opc: 0
      inc: 0  exflg: 0
- 
+
  Itl           Xid                  Uba         Flag  Lck        Scn/Fsc
 0x01   0x0001.00c.000002cb  0x0000123a.00df.02  C---    0  scn  0x0000000000534471
 Branch block dump
@@ -1190,7 +1190,7 @@ Dump of memory from 0x744984c00014 to 0x744984c01ffc
 744984C00010          00000000 00000000 00000000      [............]
 744984C00020 00000000 00000000 00000000 00000000  [................]
         Repeat 508 times
-744984C01FF0 00000000 00000000 00000000           [............]    
+744984C01FF0 00000000 00000000 00000000           [............]
 
 End dump data blocks tsn: 13 file#: 25 minblk 787 maxblk 787
 
@@ -1212,13 +1212,13 @@ BH (0xc1fd09c8) file#: 25 rdba: 0x00000314 (1024/788) class: 1 ba: 0xc1b9e000
   flags: buffer_dirty
   LRBA: [0x8.7cb7.0] LSCN: [0x534380] HSCN: [0x534fbe] HSUB: [1]
   Printing buffer operation history (latest change first): (cnt 1)
-  01. sid:01 L464:chg1_mn:bic:FMS     02. sid:01 L778:chg1_mn:bis:FMS   
-  03. sid:01 L327:chg1:set:MEXCL      04. sid:15 L464:chg1_mn:bic:FMS   
-  05. sid:15 L778:chg1_mn:bis:FMS     06. sid:15 L552:chg_main:bic:CLN  
-  07. sid:15 L353:gcur:set:MEXCL      08. sid:15 L353:gcur:set:MEXCL    
-  09. sid:15 L464:chg1_mn:bic:FMS     10. sid:15 L778:chg1_mn:bis:FMS   
-  11. sid:15 L552:chg_main:bic:CLN    12. sid:15 L353:gcur:set:MEXCL    
-  13. sid:15 L464:chg1_mn:bic:FMS     14. sid:15 L932:H_MKSGS_BG:sw:mq  
+  01. sid:01 L464:chg1_mn:bic:FMS     02. sid:01 L778:chg1_mn:bis:FMS
+  03. sid:01 L327:chg1:set:MEXCL      04. sid:15 L464:chg1_mn:bic:FMS
+  05. sid:15 L778:chg1_mn:bis:FMS     06. sid:15 L552:chg_main:bic:CLN
+  07. sid:15 L353:gcur:set:MEXCL      08. sid:15 L353:gcur:set:MEXCL
+  09. sid:15 L464:chg1_mn:bic:FMS     10. sid:15 L778:chg1_mn:bis:FMS
+  11. sid:15 L552:chg_main:bic:CLN    12. sid:15 L353:gcur:set:MEXCL
+  13. sid:15 L464:chg1_mn:bic:FMS     14. sid:15 L932:H_MKSGS_BG:sw:mq
 
   buffer tsn: 13 rdba: 0x00000314 (1024/788)
   scn: 0x534fbe seq: 0x01 flg: 0x00 tail: 0x4fbe0601
@@ -1745,7 +1745,7 @@ Block header dump:  0x00000314
  seg/obj: 0x12020  csc:  0x0000000000534fbe  itc: 2  flg: E-  typ: 2 - INDEX
      brn: 0  bdba: 0x310 ver: 0x01 opc: 0
      inc: 0  exflg: 0
- 
+
  Itl           Xid                  Uba         Flag  Lck        Scn/Fsc
 0x01   0x0001.012.000002c5  0x00000879.00d7.01  CBU-    0  scn  0x0000000000534ed5
 0x02   0x0001.021.000002c3  0x00000873.00d7.0c  C-U-    0  scn  0x0000000000534ed5
@@ -2947,7 +2947,6 @@ Dump of memory from 0x744984c00014 to 0x744984c01ffc
 744984C00010          00000000 00000000 00000000      [............]
 744984C00020 00000000 00000000 00000000 00000000  [................]
         Repeat 508 times
-744984C01FF0 00000000 00000000 00000000           [............]    
+744984C01FF0 00000000 00000000 00000000           [............]
 
 End dump data blocks tsn: 13 file#: 25 minblk 788 maxblk 788
-
