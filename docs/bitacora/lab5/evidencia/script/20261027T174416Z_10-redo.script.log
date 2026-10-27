@@ -1,0 +1,68 @@
+
+===== 1. Grupos (v$log) y miembros (v$logfile) =====
+
+    GROUP#    THREAD#  SEQUENCE#	 MB    MEMBERS ARCHIVED STATUS	   FIRST_CHANGE#
+---------- ---------- ---------- ---------- ---------- -------- ---------- -------------
+	 1	    1	      16	200	     1 NO	CURRENT 	 5500405
+	 2	    1	      14	200	     1 YES	INACTIVE	 5496253
+	 3	    1	      15	200	     1 YES	INACTIVE	 5497997
+
+    GROUP# MEMBER					TYPE	STATUS
+---------- -------------------------------------------- ------- ----------
+	 1 /opt/oracle/oradata/FREE/redo01.log		ONLINE
+	 2 /opt/oracle/oradata/FREE/redo02.log		ONLINE
+	 3 /opt/oracle/oradata/FREE/redo03.log		ONLINE
+
+===== 2. Multiplexar: un segundo MIEMBRO en cada grupo (mismo contenido, escritos a la vez por LGWR) =====
+Grupo 1: a??adido /opt/oracle/oradata/FREE/redo01b.log
+Grupo 2: a??adido /opt/oracle/oradata/FREE/redo02b.log
+Grupo 3: a??adido /opt/oracle/oradata/FREE/redo03b.log
+-- Un miembro recién añadido figura como INVALID hasta que LGWR escribe en él por primera vez
+
+    GROUP# MEMBER					STATUS
+---------- -------------------------------------------- ----------
+	 1 /opt/oracle/oradata/FREE/redo01.log
+	 1 /opt/oracle/oradata/FREE/redo01b.log 	INVALID
+	 2 /opt/oracle/oradata/FREE/redo02.log
+	 2 /opt/oracle/oradata/FREE/redo02b.log 	INVALID
+	 3 /opt/oracle/oradata/FREE/redo03.log
+	 3 /opt/oracle/oradata/FREE/redo03b.log 	INVALID
+
+===== 3. Cambio de log (log switch): el grupo CURRENT pasa al siguiente, en círculo =====
+
+    GROUP#  SEQUENCE# STATUS
+---------- ---------- ----------
+	 1	   16 ACTIVE
+	 2	   17 CURRENT
+	 3	   15 INACTIVE
+
+    GROUP#  SEQUENCE# STATUS
+---------- ---------- ----------
+	 1	   16 ACTIVE
+	 2	   17 ACTIVE
+	 3	   18 CURRENT
+-- Tras dos cambios, todos los miembros ya se han escrito: ninguno queda INVALID
+
+    GROUP# MEMBER					STATUS
+---------- -------------------------------------------- ----------
+	 1 /opt/oracle/oradata/FREE/redo01.log
+	 1 /opt/oracle/oradata/FREE/redo01b.log 	INVALID
+	 2 /opt/oracle/oradata/FREE/redo02.log
+	 2 /opt/oracle/oradata/FREE/redo02b.log
+	 3 /opt/oracle/oradata/FREE/redo03.log
+	 3 /opt/oracle/oradata/FREE/redo03b.log
+
+===== 4. Errores que el examen pregunta (ninguno cambia nada: Oracle se protege) =====
+4a. Borrar el grupo CURRENT -> ORA-01623: log 3 is current log for instance FREE (thread 1) - cannot drop
+4b. Borrar un miembro del grupo CURRENT -> ORA-01609: log 3 is the current log for thread 1 - cannot drop members
+4c. Borrar otro grupo dejando uno solo -> ORA-00350: log 1 of instance FREE (thread 1) needs to be archived
+
+===== 5. Historial de cambios de log (v$log_history) =====
+
+ SEQUENCE# FIRST_CHANGE# INICIO
+---------- ------------- -------------------
+	17	 5506964 2026-10-27 17:44:18
+	16	 5500405 2026-10-27 17:32:44
+	15	 5497997 2026-10-27 17:32:36
+	14	 5496253 2026-10-27 17:32:33
+	13	 5490234 2026-10-27 17:26:46
