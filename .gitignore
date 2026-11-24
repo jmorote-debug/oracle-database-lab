@@ -3,3 +3,6 @@ backups/
 
 # Evidencia fallida de SQLcl (Lab 4)
 /docs/bitacora/lab4/evidencia/spool/20261024T123912Z_05-instancia-y-base.spool.log
+
+# Cachés de Python
+__pycache__/

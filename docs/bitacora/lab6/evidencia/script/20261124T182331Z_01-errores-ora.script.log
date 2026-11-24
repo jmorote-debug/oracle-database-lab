@@ -1,0 +1,7 @@
+== EVIDENCIA alumno=E047 hora=2026-11-24T18:23:32Z origen=lab6-ora-sauUIt
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-24T17:15:07 scn=7553588
+
+[1mCODIGO[m          [1mVECES[m [1mEJEMPLO[m                                                                                                 
+____________ ________ _______________________________________________________________________________________________________ 
+ORA-00800           6 Errors in file /opt/oracle/diag/rdbms/free/FREE/trace/FREE_lgwr_84.trc  (incident=25793) (PDBNAME=CD    
+
