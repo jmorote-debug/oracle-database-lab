@@ -32,6 +32,9 @@ CÓMO SE RELLENA (léelo y borra este comentario si quieres; el script de evalua
 - **Propósito:** Comprender los objetivos del laboratorio y organizar su realización por partes.
 
 - **Qué hace (con mis palabras):**
-  [Explica tú brevemente qué aprendiste del resumen y cómo te ayudó a organizar el trabajo.]
+ En el apartado A: He preparado un entorno y tener una copa para recuperarlo si algo falla.
+ En el apartado B: He aprendido a saber si un la base de datos funciona correctamente y qué mantenimiento hace Oracle por si solo.
+ En el apartado C: He aprendido como afectan los parametros al funcionamiento y cómo conseguir que una PDB se abra automáticamente al reiniciar.
+ En el apartado D: He aprendido cómo se conecta una aplicación, cómo identifica sus sesiones y cómo detener operaciones sin perder la integridad de los datos.
 
 - **Evidencia de ejecución:** No aplica.
