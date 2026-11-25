@@ -1,0 +1,47 @@
+== DIAGNÓSTICO POSTERIOR ==
+== EVIDENCIA alumno=E047 hora=2026-11-25T11:51:32Z origen=08-diagnostico
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-25T11:45:10 scn=8579760
+== 1. ¿Quién espera, en qué y por culpa de quién? ==
+== 2. ¿Por qué fila exacta? ==
+== 3. Los bloqueos: quién TIENE el TX (lmode 6, block 1) y quién lo PIDE (request 6) ==
+== 4. ¿Cuánto trabajo se desharía si se termina al bloqueador? ==
+== 5. ASH lo guardó segundo a segundo (aunque el bloqueo ya no exista, esto queda) ==
+== 6. Servicios: ¿están arrancados todos los que existen? (NO = existe, pero el listener no lo anuncia) ==
+
+    CON_ID NAME             ARRANCADO
+---------- ---------------- ---------
+         3 FREEPDB1         SI       
+         3 academia_app     SI       
+== 7. Cuentas que no son de Oracle y no están OPEN (LOCKED = a mano; LOCKED(TIMED) = intentos fallidos) ==
+== PRUEBA DE CONEXIÓN DE LA APLICACIÓN ==
+== EVIDENCIA alumno=E047 hora=2026-11-25T11:51:35Z origen=06-app-sigue
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-25T11:45:10 scn=8579768
+
+ROLE
+--------------------
+ROL_APP_ACADEMIA
+
+1 row selected. 
+
+
+ESTUDIANTES
+-----------
+      17600
+
+1 row selected. 
+
+
+1 row updated.
+
+
+Rollback complete.
+
+-- Ya no puede insertar en el histórico (el permiso temporal de la Parte F se retiró): error esperado
+
+Error starting at line : 12 File @ file:/home/jorge/oracle-database-lab/scripts/lab6/06-app-sigue.sql
+In command -
+INSERT INTO carga_hist.registro (id, relleno) VALUES (-1, 'x')
+Error at Command Line : 12 Column : 24 File @ file:/home/jorge/oracle-database-lab/scripts/lab6/06-app-sigue.sql
+Error report -
+SQL Error: ORA-00942: table or view "CARGA_HIST"."REGISTRO" does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/

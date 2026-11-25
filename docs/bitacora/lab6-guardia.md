@@ -17,3 +17,7 @@
 **Validación:** Volví a ejecutar el diagnóstico y comprobé que ya no aparecían sesiones bloqueadas. También consulté el estudiante 101 y confirmé que su estado era `ACTIVO`.
 
 **Acción preventiva:** [Propón cómo evitar que una aplicación mantenga transacciones abiertas durante demasiado tiempo y cómo detectar bloqueos similares antes de que afecten a los usuarios.]
+Incidente	Problema			Solución
+INC-601		Bloqueo de una fila		Finalizar la sesión bloqueadora
+INC-602		Servicio academia_app detenido	Arrancar el servicio
+INC-603		Cuenta APP_ACADEMIA bloqueada	Desbloquear la cuenta

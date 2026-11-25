@@ -1,0 +1,22 @@
+== EVIDENCIA alumno=E047 hora=2026-11-25T11:43:32Z origen=08-diagnostico
+== EVIDENCIA base=no-disponible (hora de Ubuntu: la base no respondía)
+Connection failed
+  USER          = c##ops_ro
+  URL           = jdbc:oracle:thin:@//localhost:1521/FREE
+  Error Message = ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=cg58YzmCSBmltRzlq4586w==)
+https://docs.oracle.com/error-help/db/ora-12541/
+
+== 1. ¿Quién espera, en qué y por culpa de quién? ==
+SP2-0640: Not connected
+== 2. ¿Por qué fila exacta? ==
+SP2-0640: Not connected
+== 3. Los bloqueos: quién TIENE el TX (lmode 6, block 1) y quién lo PIDE (request 6) ==
+SP2-0640: Not connected
+== 4. ¿Cuánto trabajo se desharía si se termina al bloqueador? ==
+SP2-0640: Not connected
+== 5. ASH lo guardó segundo a segundo (aunque el bloqueo ya no exista, esto queda) ==
+SP2-0640: Not connected
+== 6. Servicios: ¿están arrancados todos los que existen? (NO = existe, pero el listener no lo anuncia) ==
+SP2-0640: Not connected
+== 7. Cuentas que no son de Oracle y no están OPEN (LOCKED = a mano; LOCKED(TIMED) = intentos fallidos) ==
+SP2-0640: Not connected
