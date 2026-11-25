@@ -188,3 +188,133 @@ CÓMO SE RELLENA (léelo y borra este comentario si quieres; el script de evalua
 - **Propósito:** Comprobar qué ocurre con el almacenamiento después de eliminar registros y compactar una tabla.
 - **Qué hace (con mis palabras):** [Explicar por qué DELETE no reduce el segmento y qué hacen ROW MOVEMENT y SHRINK SPACE]
 - **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T190646Z_05-hwm-shrink.script.log`
+
+## Entrada 17 — Parte G.1: perfiles y gobierno del acceso
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje original del chat donde compartiste los resultados de 06-gobierno-acceso].
+- **Código recibido:** Comandos para ejecutar y comprobar los scripts de gobierno del acceso de la Parte G.
+- **Dónde lo usé:** Parte G.1, perfiles de seguridad, roles y cuentas de usuario.
+- **Propósito:** Comprobar la creación de `PRF_PERSONAS`, los roles funcionales y la cuenta `ANA_GARCIA`.
+- **Qué hace (con mis palabras):** [Explica cómo el perfil limita intentos de acceso y cómo los roles permiten asignar permisos sin concederlos individualmente].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T193316Z_06-gobierno-acceso.script.log`
+
+## Entrada 18 — Parte G.2: pruebas de permisos
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia tu mensaje original con las pruebas de permisos de Ana y de la aplicación].
+- **Código recibido:** Indicaciones para ejecutar y revisar las pruebas de acceso de la Parte G.
+- **Dónde lo usé:** Parte G.2, validación de privilegios.
+- **Propósito:** Comprobar que los usuarios podían realizar únicamente las operaciones autorizadas.
+- **Qué hace (con mis palabras):** [Explica por qué Ana podía consultar las matrículas y modificar ESTADO, pero no NOMBRES, y por qué algunos errores eran esperados].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T193411Z_06-probar-acceso.script.log`
+
+## Entrada 19 — Parte G.3: revocación en cascada
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje original donde compartiste el resultado de 06-cascada.sh].
+- **Código recibido:** `bash scripts/lab6/06-cascada.sh`
+- **Dónde lo usé:** Parte G.3, administración y revocación de privilegios.
+- **Propósito:** Entender las diferencias entre `ADMIN OPTION` y `GRANT OPTION`.
+- **Qué hace (con mis palabras):** [Explica qué ocurrió al revocar un privilegio de sistema y uno de objeto, y por qué sus efectos sobre terceros fueron distintos].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T193525Z_06-cascada.script.log`
+
+## Entrada 20 — Parte H.1: objetos inválidos
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia tu mensaje de la Parte H con los resultados de 07-objetos].
+- **Código recibido:** Indicaciones de ejecución y comprobación de `scripts/lab6/07-objetos.sql`.
+- **Dónde lo usé:** Parte H.1, dependencias e índices.
+- **Propósito:** Comprender la invalidación de vistas y funciones después de cambios en tablas.
+- **Qué hace (con mis palabras):** [Explica cómo una modificación de columna puede invalidar objetos dependientes, cómo se recompilan y qué significa un índice UNUSABLE].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T193803Z_07-objetos.script.log`
+
+## Entrada 21 — Parte H.2: memoria y advisors
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje donde compartiste las estadísticas de memoria].
+- **Código recibido:** Indicaciones para revisar los resultados de `scripts/lab6/07-memoria.sql`.
+- **Dónde lo usé:** Parte H.2, SGA, PGA y advisors de memoria.
+- **Propósito:** Interpretar las recomendaciones de Oracle sobre la memoria de la instancia.
+- **Qué hace (con mis palabras):** [Explica cómo comparaste distintos tamaños de SGA y PGA y por qué los resultados no justificaban aumentar la memoria].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T193912Z_07-memoria.script.log`
+
+## Entrada 22 — Parte H.3: archivos críticos
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje donde compartiste el inventario de archivos de Oracle].
+- **Código recibido:** Indicaciones para ejecutar y revisar `scripts/lab6/07-archivos-criticos.sql`.
+- **Dónde lo usé:** Parte H.3, inventario y recuperación de la base.
+- **Propósito:** Identificar archivos de control, redo logs, SPFILE, archivos archivados y copias RMAN.
+- **Qué hace (con mis palabras):** [Explica la función de los archivos de control y redo, y qué información proporciona la FRA].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T194055Z_07-archivos-criticos.script.log`
+
+## Entrada 23 — Parte H.4: ADR y trazas
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje donde mostraste los resultados de ADR y TKPROF].
+- **Código recibido:** Indicaciones para ejecutar y analizar la práctica `07-adr-trazas`.
+- **Dónde lo usé:** Parte H.4, diagnóstico y trazado de sesiones.
+- **Propósito:** Investigar los mensajes del alert log y analizar el coste de una consulta.
+- **Qué hace (con mis palabras):** [Explica para qué sirve ADR, cómo se identifica la traza de una sesión y qué significan las lecturas lógicas mostradas por TKPROF].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T194227Z_07-adr-trazas.script.log`
+
+## Entrada 24 — Parte I.2: incidente INC-601
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje original donde compartiste el diagnóstico del bloqueo de INC-601].
+- **Código recibido:** Orientaciones para consultar las sesiones bloqueadas y ejecutar `ALTER SYSTEM KILL SESSION '206,970' IMMEDIATE;` después de comprobar SID y SERIAL#.
+- **Dónde lo usé:** Parte I.2, incidente INC-601.
+- **Propósito:** Localizar y resolver un bloqueo de transacción.
+- **Qué hace (con mis palabras):** [Explica cómo identificaste a la sesión bloqueadora y por qué terminaste esa sesión en lugar de reiniciar la instancia].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261124T194614Z_08-incidente1-diagnostico.script.log` y `20261124T194729Z_08-incidente1-validacion.script.log`
+
+## Entrada 25 — Parte I.3: incidente INC-602
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje original donde mostraste el ticket ORA-12514 y el diagnóstico del listener].
+- **Código recibido:** `bash scripts/lab6/08-guardia.sh incidente 2`, ejecución de `08-diagnostico.sql` y recuperación del servicio mediante `scripts/lab6/03-servicio.sql`.
+- **Dónde lo usé:** Parte I.3, incidente INC-602.
+- **Propósito:** Identificar y corregir un problema de conexión con el servicio `academia_app`.
+- **Qué hace (con mis palabras):** [Explica por qué el servicio detenido producía ORA-12514, cómo se arrancó y cómo comprobaste que la aplicación podía conectarse].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261125T114623Z_08-incidente2-diagnostico.script.log`, `20261125T114930Z_08-incidente2-intervencion.script.log` y `20261125T114936Z_08-incidente2-validacion.script.log`
+
+## Entrada 26 — Parte I.4: incidente INC-603
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje original donde compartiste el diagnóstico de APP_ACADEMIA bloqueada].
+- **Código recibido:** Consulta de `DBA_USERS` y sentencia `ALTER USER app_academia ACCOUNT UNLOCK;`.
+- **Dónde lo usé:** Parte I.4, incidente INC-603.
+- **Propósito:** Identificar el bloqueo administrativo de la cuenta de aplicación y recuperar su acceso.
+- **Qué hace (con mis palabras):** [Explica la diferencia entre LOCKED y LOCKED(TIMED), cómo desbloqueaste la cuenta y cómo validaste la conexión].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261125T115039Z_08-incidente3-diagnostico.script.log` y `20261125T115132Z_08-incidente3-validacion.script.log`
+
+## Entrada 27 — Parte J: preguntas de comprobación
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** Dame las 20 preguntas corregidas con los errores que tengo que añadir
+- **Código recibido:** No aplica.
+- **Dónde lo usé:** Parte J.2, preparación de `lab6-respuestas.md`.
+- **Propósito:** Revisar las respuestas del laboratorio, identificar errores y localizar las evidencias correspondientes.
+- **Qué hace (con mis palabras):** [Explica qué respuestas revisaste, qué errores corregiste y cómo contrastaste los resultados con tus registros].
+- **Evidencia de ejecución:** No aplica. Documento relacionado: `docs/bitacora/lab6-respuestas.md`.
+
+## Entrada 28 — Parte J: verificación y preparación de la entrega
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** Si ya está bien sigamos que hay que acabar
+- **Código recibido:** `bash scripts/lab6/09-verificacion-final.sh` y comandos de comprobación de Git.
+- **Dónde lo usé:** Parte J.1 y J.3, verificación técnica y preparación de la entrega.
+- **Propósito:** Detectar requisitos pendientes antes de crear el commit final y el Pull Request.
+- **Qué hace (con mis palabras):** [Explica qué comprobó el verificador, qué fallo apareció inicialmente y cómo se resolvió al crear el documento de respuestas].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/evidencia/script/20261125T120617Z_09-verificacion-final.script.log` y la evidencia posterior de verificación con resultado `TODO OK`.
+
+## Entrada 29 — Recuperación del entorno Docker
+
+- **Herramienta:** ChatGPT
+- **Prompt (literal, copiado tal cual):** [Copia el mensaje donde mostraste que Docker no estaba disponible desde WSL].
+- **Código recibido:** Comandos de comprobación de Docker Desktop y `docker start "$CONT_NAME"`.
+- **Dónde lo usé:** Recuperación del entorno antes de continuar con la Parte I.
+- **Propósito:** Volver a iniciar Oracle sin eliminar el contenedor ni perder los datos.
+- **Qué hace (con mis palabras):** [Explica cómo se recuperó la integración de Docker con WSL y se comprobó que la PDB y los datos seguían disponibles].
+- **Evidencia de ejecución:** `docs/bitacora/lab6/incidencias-entorno/20261125T114332Z_docker-no-disponible.log`

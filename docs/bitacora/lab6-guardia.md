@@ -7,7 +7,7 @@
 **Diagnóstico:** Al consultar `V$SESSION` y `V$LOCK`, observé que la sesión 48, perteneciente a `ANA_GARCIA`, estaba esperando un bloqueo `enq: TX - row lock contention`. La sesión que lo provocaba era la 206, correspondiente a `APP_ACADEMIA`.
 
 
-**Causa raíz:** APP_ACADEMIA mantenía una transacción sin finalizar y retenía el bloqueo de la fila que necesitaba modifica
+**Causa raíz:** APP_ACADEMIA mantenía una transacción sin finalizar y retenía el bloqueo de la fila que necesitaba modificar Ana.
 
 **Intervención:** Después de comprobar el SID y el SERIAL# de la sesión bloqueadora, ejecuté:
 
