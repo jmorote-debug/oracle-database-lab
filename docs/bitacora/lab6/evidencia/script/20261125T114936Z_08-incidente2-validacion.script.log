@@ -1,0 +1,81 @@
+== DIAGNÓSTICO POSTERIOR ==
+== EVIDENCIA alumno=E047 hora=2026-11-25T11:49:36Z origen=08-diagnostico
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-25T11:45:10 scn=8578359
+== 1. ¿Quién espera, en qué y por culpa de quién? ==
+== 2. ¿Por qué fila exacta? ==
+== 3. Los bloqueos: quién TIENE el TX (lmode 6, block 1) y quién lo PIDE (request 6) ==
+== 4. ¿Cuánto trabajo se desharía si se termina al bloqueador? ==
+== 5. ASH lo guardó segundo a segundo (aunque el bloqueo ya no exista, esto queda) ==
+== 6. Servicios: ¿están arrancados todos los que existen? (NO = existe, pero el listener no lo anuncia) ==
+
+    CON_ID NAME             ARRANCADO
+---------- ---------------- ---------
+         3 FREEPDB1         SI       
+         3 academia_app     SI       
+== 7. Cuentas que no son de Oracle y no están OPEN (LOCKED = a mano; LOCKED(TIMED) = intentos fallidos) ==
+== ESTADO DEL LISTENER ==
+
+LSNRCTL for Linux: Version 23.26.3.0.0 - Production on 25-NOV-2026 11:49:40
+
+Copyright (c) 1991, 2026, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=0.0.0.0)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 23.26.3.0.0 - Production
+Start Date                25-NOV-2026 11:45:10
+Uptime                    0 days 0 hr. 4 min. 29 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Default Service           FREE
+Listener Parameter File   /opt/oracle/product/26ai/dbhomeFree/network/admin/listener.ora
+Listener Log File         /opt/oracle/diag/tnslsnr/16351136ca48/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+Services Summary...
+Service "55e54f210f100828e0630b00580adfd0" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREE" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREEXDB" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "academia_app" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "freepdb1" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+The command completed successfully
+== PRUEBA DESDE APP_ACADEMIA ==
+== EVIDENCIA alumno=E047 hora=2026-11-25T11:49:40Z origen=06-app-sigue
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-25T11:45:10 scn=8578366
+
+ROLE
+--------------------
+ROL_APP_ACADEMIA
+
+1 row selected. 
+
+
+ESTUDIANTES
+-----------
+      17600
+
+1 row selected. 
+
+
+1 row updated.
+
+
+Rollback complete.
+
+-- Ya no puede insertar en el histórico (el permiso temporal de la Parte F se retiró): error esperado
+
+Error starting at line : 12 File @ file:/home/jorge/oracle-database-lab/scripts/lab6/06-app-sigue.sql
+In command -
+INSERT INTO carga_hist.registro (id, relleno) VALUES (-1, 'x')
+Error at Command Line : 12 Column : 24 File @ file:/home/jorge/oracle-database-lab/scripts/lab6/06-app-sigue.sql
+Error report -
+SQL Error: ORA-00942: table or view "CARGA_HIST"."REGISTRO" does not exist
+Help: https://docs.oracle.com/error-help/db/ora-00942/

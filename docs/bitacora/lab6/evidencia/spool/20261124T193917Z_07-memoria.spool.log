@@ -1,0 +1,73 @@
+== EVIDENCIA alumno=E047 hora=2026-11-24T19:39:17Z origen=07-memoria
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-24T18:28:24 scn=7574241
+SQL Format Cleared
+== 1. La SGA por componentes (V$SGAINFO) ==
+
+NAME                                       MB RES
+---------------------------------- ---------- ---
+Maximum SGA Size                         1529 No 
+Buffer Cache Size                        1008 Yes
+Shared Pool Size                          480 Yes
+Startup overhead in Shared Pool           223 No 
+Shared IO Pool Size                        80 Yes
+Free SGA Memory Available                  16    
+Large Pool Size                            16 Yes
+Granule Size                               16 No 
+Fixed SGA Size                              5 No 
+Redo Buffers                                4 No 
+Data Transfer Cache Size                    0 Yes
+Java Pool Size                              0 Yes
+Vector Memory Area Size                     0 No 
+In-Memory Area Size                         0 No 
+Streams Pool Size                           0 Yes
+== 2. Componentes dinámicos: entre qué tamaños se han movido desde el arranque (ASMM) ==
+
+COMPONENT               ACTUAL_MB     MIN_MB     MAX_MB  FIJADO_MB LAST_OPER_TYP
+---------------------- ---------- ---------- ---------- ---------- -------------
+DEFAULT buffer cache          928        928        928          0 INITIALIZING 
+shared pool                   480        480        480          0 STATIC       
+Shared IO Pool                 80         80         80         80 STATIC       
+large pool                     16         16         16          0 STATIC       
+
+MOVIMIENTOS_GROW_SHRINK
+-----------------------
+                      0
+== 3. La PGA de la instancia (V$PGASTAT) ==
+
+NAME                                    VALOR UNIDAD      
+---------------------------------- ---------- ------------
+aggregate PGA target parameter            512 MB          
+aggregate PGA auto target                 153 MB          
+total PGA inuse                           342 MB          
+total PGA allocated                       403 MB          
+maximum PGA allocated                     477 MB          
+over allocation count                       0             
+cache hit percentage                      100 percent     
+== 4. Qué procesos consumen más PGA ahora ==
+
+PNAME  SPID                         PGA_MB
+------ ------------------------ ----------
+M005   6344                           31.6
+J000   11156                          14.9
+ARC0   6094                           12.8
+ARC1   6096                           12.4
+ARC2   6098                           12.4
+== 5. Antes de cambiar la memoria, pregunta a los advisors (factor 1 = tamaño actual) ==
+
+    SGA_MB     FACTOR ESTD_DB_TIME_FACTOR ESTD_PHYSICAL_READS
+---------- ---------- ------------------- -------------------
+       768         .5              1.0319               45836
+      1152        .75                   1               35947
+      1536          1                   1               35947
+      1920       1.25                   1               35947
+      2304        1.5                   1               35947
+      2688       1.75                   1               35947
+      3072          2                   1               35947
+
+    PGA_MB     FACTOR    HIT_PCT  OVERALLOC
+---------- ---------- ---------- ----------
+       128        .25         96          4
+       256         .5         96          4
+       384        .75        100          0
+       512          1        100          0
+      1024          2        100          0

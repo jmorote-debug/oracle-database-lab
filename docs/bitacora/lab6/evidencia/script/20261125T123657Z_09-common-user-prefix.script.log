@@ -1,0 +1,7 @@
+== EVIDENCIA alumno=E047 hora=2026-11-25T12:36:57Z origen=09-common-user-prefix
+== EVIDENCIA contenedor=16351136ca48 dbid=1509902213 arranque=2026-11-25T11:45:10 scn=8585636
+
+NAME			  VALOR 			 ISDEFAULT
+------------------------- ------------------------------ ---------
+common_user_prefix	  C##				 TRUE
+
